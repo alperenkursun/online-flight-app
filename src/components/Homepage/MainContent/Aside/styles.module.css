@@ -1,0 +1,18 @@
+/* aside start */
+@keyframes asideRightAnimation {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.aside {
+  animation-name: asideRightAnimation;
+  animation-duration: 1s;
+  position: relative;
+}
+/* aside end */

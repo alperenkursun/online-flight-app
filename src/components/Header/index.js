@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+// Import CSS styles
 import styles from "./styles.module.css";
+
+// Import necessary libraries and hooks
+import React, { useState } from "react";
 import { Container, Img } from "@chakra-ui/react";
-// images start
+
+// Import images
 import profile from "../../assets/images/profile.webp";
 
 function Header() {
-  // states start
+  // State management
   const [mobileMenu, setMobileMenu] = useState(true);
 
-  // function start
+  // Function definitions
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
   };
+
   return (
     <header className={styles.header}>
       <Container maxW="1124px" className={styles.headerInner}>

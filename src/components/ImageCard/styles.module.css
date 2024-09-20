@@ -1,0 +1,13 @@
+/* image start */
+
+.imagesCard::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* image end */
