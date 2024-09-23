@@ -33,12 +33,7 @@ function Header() {
             } && ${mobileMenu && styles.active} `}
             onClick={toggleMenu}
           ></i>
-          <i
-            className={`fa-solid fa-xmark ${styles.mobileButton} ${
-              styles.mobileCloseButton
-            } ${!mobileMenu && styles.active}`}
-            onClick={toggleMenu}
-          ></i>
+
           <ul
             className={`${styles.mobileMenuContent} ${
               !mobileMenu && styles.active
@@ -75,6 +70,12 @@ function Header() {
                 <span>Alperen Kurşun</span>
               </a>
             </li>
+            <i
+              className={`fa-solid fa-xmark ${styles.mobileButton} ${
+                styles.mobileCloseButton
+              } ${!mobileMenu && styles.active}`}
+              onClick={toggleMenu}
+            ></i>
           </ul>
         </nav>
       </Container>

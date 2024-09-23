@@ -1,0 +1,17 @@
+/* content start */
+
+@keyframes contentAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content {
+  animation-name: contentAnimation;
+  animation-duration: 1s;
+  position: relative;
+}
+/* content end */

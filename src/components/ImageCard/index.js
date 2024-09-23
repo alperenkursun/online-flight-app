@@ -13,6 +13,7 @@ function ImageCard({ image, icon, title }) {
         width="100%"
         height={264}
         className={styles.imagesCard}
+        box-shadow="rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
       >
         <Img
           src={image}

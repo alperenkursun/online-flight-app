@@ -1,4 +1,4 @@
-/* image start */
+/* image card start */
 
 .imagesCard::before {
   content: "";
@@ -10,4 +10,4 @@
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-/* image end */
+/* image card end */
