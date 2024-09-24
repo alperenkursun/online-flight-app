@@ -1,4 +1,4 @@
-/* content start */
+/* myflights main content start */
 @keyframes contentAnimation {
   from {
     opacity: 0;
@@ -12,4 +12,4 @@
   animation: contentAnimation 1s;
   position: relative;
 }
-/* content end */
+/* myflights main content end */

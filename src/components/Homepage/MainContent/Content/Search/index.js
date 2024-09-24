@@ -71,6 +71,7 @@ function Search() {
         gap="2%"
         marginY={5}
       >
+        {/* location inputs */}
         <Box
           display="flex"
           alignItems="center"
@@ -79,7 +80,7 @@ function Search() {
         >
           <Box position="relative" width="49.5%">
             <Input
-              placeholder="Nereden"
+              placeholder="From"
               paddingLeft={10}
               borderTopLeftRadius={20}
               borderBottomLeftRadius={20}
@@ -101,7 +102,7 @@ function Search() {
           </Box>
           <Box position="relative" width="49.5%">
             <Input
-              placeholder="Nereye"
+              placeholder="To"
               paddingLeft={10}
               borderTopLeftRadius={0}
               borderBottomLeftRadius={0}
@@ -123,6 +124,7 @@ function Search() {
             </Box>
           </Box>
         </Box>
+        {/* date inputs */}
         <Box
           display="flex"
           alignItems="center"
@@ -132,7 +134,7 @@ function Search() {
         >
           <Box position="relative" width="49.5%">
             <Input
-              placeholder="Gidiş Tarihi"
+              placeholder="Departure Date"
               paddingLeft={10}
               borderTopLeftRadius={20}
               borderBottomLeftRadius={20}
@@ -154,7 +156,7 @@ function Search() {
           </Box>
           <Box position="relative" width="49.5%">
             <Input
-              placeholder="Dönüş Tarihi"
+              placeholder="Return Date"
               paddingLeft={10}
               borderTopLeftRadius={0}
               borderBottomLeftRadius={0}

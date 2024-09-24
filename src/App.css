@@ -1,3 +1,4 @@
+/* app start */
 :root {
   --primary-color: #4a1b96;
   --secondary-color: #e5dfea;
@@ -12,5 +13,6 @@
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
+/* app end */

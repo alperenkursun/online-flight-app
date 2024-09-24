@@ -11,11 +11,9 @@
     height: 100px;
   }
 }
-
 /* header inner end */
 
 /* left start */
-
 @keyframes headerLeftAnimation {
   from {
     opacity: 0;
@@ -32,8 +30,7 @@
   align-items: center;
   gap: 10px;
   position: relative;
-  animation-name: headerLeftAnimation;
-  animation-duration: 1s;
+  animation: headerLeftAnimation 1s;
 }
 
 .left div {
@@ -41,13 +38,12 @@
   height: 31px;
   padding: 5px;
   background-color: var(--primary-color);
+  border-radius: 50%;
   position: relative;
-  border-radius: 100%;
 }
 
 .left div i {
   font-size: 24px;
-  border-radius: 100%;
   color: var(--background-color);
   position: absolute;
   top: 50%;
@@ -64,12 +60,10 @@
   .left div i {
     font-size: 28px;
   }
-
   .left span {
     font-size: 24px;
   }
 }
-
 /* left end */
 
 /* right start */
@@ -86,8 +80,7 @@
 
 nav.right {
   position: relative;
-  animation-name: headerRightAnimation;
-  animation-duration: 1s;
+  animation: headerRightAnimation 1s;
   width: max-content;
   height: max-content;
 }
@@ -111,7 +104,6 @@ nav.right ul li i {
 .mobileButton {
   color: var(--primary-color);
   display: none;
-  /* transition: all 0.3s; */
 }
 
 @media only screen and (max-width: 768px) {
@@ -138,32 +130,30 @@ nav.right ul li i {
 
   .mobileButton.active {
     display: block;
-    animation-name: mobileMenuButtonAnimation;
-    animation-duration: 0.8s;
+    animation: mobileMenuButtonAnimation 0.8s;
   }
 
   nav.right ul.mobileMenuContent {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     background-color: var(--primary-color);
     position: fixed;
     top: 0;
-    left: 0px;
+    left: 100%;
     width: 100%;
     padding: 32px 16px;
     height: 100vh;
     opacity: 0;
-    left: 100%;
     transition: all 0.4s;
     z-index: 10;
   }
 
   nav.right ul.mobileMenuContent.active {
     opacity: 1;
-    left: 0px;
+    left: 0;
   }
 
   nav.right ul.mobileMenuContent li a {
@@ -181,5 +171,4 @@ nav.right ul li i {
     font-weight: medium;
   }
 }
-
 /* right end */

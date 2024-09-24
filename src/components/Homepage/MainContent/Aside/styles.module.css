@@ -9,8 +9,7 @@
 }
 
 .aside {
-  animation-name: asideRightAnimation;
-  animation-duration: 1s;
+  animation: asideRightAnimation 1s;
   position: relative;
 }
 /* aside end */

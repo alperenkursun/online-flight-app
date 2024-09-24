@@ -1,55 +1,56 @@
-// Import CSS styles
+// import CSS styles
 import styles from "./styles.module.css";
 
-// Import necessary libraries and hooks
+// import libraries and components
 import React, { useState } from "react";
 import { Container, Img } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-// Import images
+// import images
 import profile from "../../assets/images/profile.webp";
 
-function Header() {
+const Header = () => {
   // State management
   const [mobileMenu, setMobileMenu] = useState(true);
 
-  // Function definitions
-  const toggleMenu = () => {
-    setMobileMenu(!mobileMenu);
-  };
+  // Toggle mobile menu
+  const toggleMenu = () => setMobileMenu((prevState) => !prevState);
 
   return (
     <header className={styles.header}>
       <Container maxW="1124px" className={styles.headerInner}>
-        <a href="/#" className={styles.left}>
+        <Link to="/" className={styles.left}>
           <div>
-            <i class="fa-solid fa-plane"></i>
+            <i className="fa-solid fa-plane"></i>
           </div>
           <span>PLANE SCAPE</span>
-        </a>
+        </Link>
         <nav className={styles.right}>
+          {/* Mobile Menu Toggle Button */}
           <i
             className={`fa-solid fa-bars ${styles.mobileButton} ${
               styles.mobileMenuButton
-            } && ${mobileMenu && styles.active} `}
+            } ${mobileMenu && styles.active}`}
             onClick={toggleMenu}
           ></i>
 
+          {/* Menu Items */}
           <ul
             className={`${styles.mobileMenuContent} ${
               !mobileMenu && styles.active
             }`}
           >
             <li>
-              <a href="/#">
-                <i class="fa-solid fa-tags"></i>
+              <Link to="/myflights">
+                <i className="fa-solid fa-tags"></i>
                 <span>Deals</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/#">
-                <i class="fa-solid fa-earth-americas"></i>
+              <Link to="/myflights">
+                <i className="fa-solid fa-earth-americas"></i>
                 <span>Discover</span>
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -64,12 +65,13 @@ function Header() {
                   objectFit="cover"
                   width={31}
                   height={31}
-                  borderRadius="100%"
-                  background={"red"}
+                  borderRadius="full"
+                  background="red"
                 />
                 <span>Alperen Kurşun</span>
               </a>
             </li>
+            {/* Mobile Menu Close Button */}
             <i
               className={`fa-solid fa-xmark ${styles.mobileButton} ${
                 styles.mobileCloseButton
@@ -81,6 +83,6 @@ function Header() {
       </Container>
     </header>
   );
-}
+};
 
 export default Header;

@@ -1,17 +1,18 @@
-// Import necessary libraries
+// import libraries and components
 import React from "react";
+import { Box } from "@chakra-ui/react";
 
-// Import custom components
+// import custom components
 import Header from "../../components/Header";
 import MainContent from "../../components/Homepage/MainContent";
+import Footer from "../../components/Footer";
 
-function Home() {
-  return (
-    <>
-      <Header />
-      <MainContent />
-    </>
-  );
-}
+const Home = () => (
+  <Box>
+    <Header />
+    <MainContent />
+    <Footer />
+  </Box>
+);
 
 export default Home;
