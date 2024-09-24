@@ -7,11 +7,17 @@ import App from "./App";
 
 // import provider
 import { ChakraProvider } from "@chakra-ui/react";
+import { FlightsContextProvider } from "./contexts/FlightsContext";
+import { MyFlightsContextProvider } from "./contexts/MyFlightsContext";
 
 const Root = () => (
   <div className="container">
     <ChakraProvider>
-      <App />
+      <FlightsContextProvider>
+        <MyFlightsContextProvider>
+          <App />
+        </MyFlightsContextProvider>
+      </FlightsContextProvider>
     </ChakraProvider>
   </div>
 );

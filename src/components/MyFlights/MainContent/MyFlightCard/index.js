@@ -4,8 +4,22 @@ import { Box, Image, Text } from "@chakra-ui/react";
 
 // import images
 import turkishAirlines from "../../../../assets/images/turkish-airlines.webp";
+import moment from "moment";
 
-function MyFlightCard() {
+// flight duration calculator function
+function calculateFlightDuration(departureTime, arrivalTime) {
+  const departure = moment(departureTime);
+  const arrival = moment(arrivalTime);
+
+  const duration = moment.duration(arrival.diff(departure));
+
+  const hours = Math.floor(duration.asHours());
+  const minutes = duration.minutes();
+
+  return `${hours}h ${minutes}m`;
+}
+
+function MyFlightCard({ myFlight }) {
   return (
     <Box
       display="flex"
@@ -40,7 +54,8 @@ function MyFlightCard() {
           gap={2}
         >
           <Text fontSize={{ base: 20, sm: 24 }} fontWeight={400} color="#555">
-            7:40 AM --- 9:12 AM
+            {myFlight.route.destinations[0]} ---{" "}
+            {myFlight.route.destinations[1]}
           </Text>
           <Box
             display="flex"
@@ -51,7 +66,7 @@ function MyFlightCard() {
           >
             <Box paddingRight={{ base: 0, lg: 14 }}>
               <Text fontSize={14} fontWeight={500}>
-                Delta Airlines
+                {myFlight.prefixIATA} Airlines
               </Text>
               <Text
                 fontSize={12}
@@ -64,7 +79,7 @@ function MyFlightCard() {
               >
                 Flight Details{" "}
                 <Text as="span" fontSize={10}>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i className="fa-solid fa-chevron-down"></i>
                 </Text>
               </Text>
             </Box>
@@ -73,15 +88,19 @@ function MyFlightCard() {
                 Nonstop
               </Text>
               <Text fontSize={14} fontWeight={500} color="grey">
-                1h 52m
+                {calculateFlightDuration(
+                  myFlight.scheduleDateTime,
+                  myFlight.actualLandingTime
+                )}
               </Text>
             </Box>
             <Box>
               <Text fontSize={14} fontWeight={500}>
-                SFO to LAX
+                {myFlight.route.destinations[0]} to{" "}
+                {myFlight.route.destinations[1]}
               </Text>
               <Text fontSize={14} fontWeight={500} color="grey">
-                AA 166
+                {myFlight.flightName}
               </Text>
             </Box>
           </Box>
